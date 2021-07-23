@@ -9,12 +9,15 @@ function preload(){
 
 function setup(){
   createCanvas(400,400);
-  ship = createSprite(200,200,100,50);
   sea = createSprite(200,180,400,20)
   sea.addImage (SeaImage)
-  ship.addAnimation("sailing", ship_sailing);
   edges = createEdgeSprites();
-  
+
+  ship = createSprite(200,200,100,50);
+
+  sea.scale = 0.3 
+   ship.addAnimation("sailing", ship_sailing);
+
   ship.scale = 0.25
 }
 
@@ -24,9 +27,9 @@ function draw() {
   console.log (sea.x)
 
 
-  console.log(ship.y)
+  console.log(ship.x)
   if (sea.x<0) {
-    sea.x = sea.width/2
+    sea.x = sea.width/8
   }
   
   drawSprites();
